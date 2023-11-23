@@ -20,7 +20,7 @@ const ProductItem: React.FC<itemType> = ({ productItem }) => {
   return (
     <div className='col-span-12 rounded-lg bg-slate-50 sm:col-span-6 md:col-span-4 lg:col-span-3   py-4 '>
       <div className='flex items-center justify-center'>
-        <img className='h-48 w-full ' src={productItem.image} alt="" />
+        <img className='h-48' src={productItem.image} alt="" />
       </div>
       <div className='px-2 py-3'>
         <p className='px-4 leading-12 '>{productItem.title}</p>

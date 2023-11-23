@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { productsType } from "../productType";
 
 
 type stateTypes = {
@@ -12,18 +13,6 @@ type stateTypes = {
 
 
 
-type productsType = {
-    category: string
-    description: string
-    image: string
-    title: string
-    price: number
-    id: number
-    rating: {
-        count: number
-        rate: number
-    }
-}[]
 
 const initialState: stateTypes = {
     products: [],
@@ -35,6 +24,10 @@ const initialState: stateTypes = {
 
 export const _fetchProducts = createAsyncThunk<productsType>('products/fetchProducts', async () => {
     const { data } = await axios.get('https://fakestoreapi.com/products')
+    return data
+})
+export const _fetchProductByCategory = createAsyncThunk<productsType, string>('products by category/fetchProducts', async (category) => {
+    const { data } = await axios.get(`https://fakestoreapi.com/products/category/${category}`)
     return data
 })
 
@@ -67,6 +60,31 @@ export const products = createSlice({
                     isLoading: false
                 }
             })
+
+
+
+            .addCase(_fetchProductByCategory.fulfilled, (state, action) => {     
+                state.products = action.payload
+                state.productsStatus = {
+                    isLoading: false,
+                    isError: false
+                }
+              })
+        
+        
+              .addCase(_fetchProductByCategory.pending, (state) => {     
+                state.productsStatus = {
+                    isLoading: true,
+                    isError: false
+                }
+              })
+        
+              .addCase(_fetchProductByCategory.rejected, (state) => {     
+                state.productsStatus = {
+                    isLoading: false,
+                    isError: true
+                }
+              })
     }
 })
 

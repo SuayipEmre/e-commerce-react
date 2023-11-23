@@ -1,11 +1,10 @@
 import React from "react"
 import HeaderTitle from "./title"
-import SearchInput from "./search"
+import SearchInput from "../search"
 import RightSide from "./rightSide"
 import { CiMenuBurger } from "react-icons/ci";
 import { setModal } from "~/redux/features/modal/actions"
 const Header: React.FC = () => {
-  
   return (
     <div >
       <div className="flex items-center w-full justify-between gap-12 my-4">

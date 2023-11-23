@@ -3,12 +3,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import categories from '../features/categories';
 import categoryModal from '../features/modal';
 import products from '../features/products';
+import search  from '../features/searchProducts';
+
 
 const store = configureStore({
   reducer: { 
+    search,
     categories,
     products,
-    categoryModal
+    categoryModal,
   },
 });
 

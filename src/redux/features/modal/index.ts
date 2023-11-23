@@ -18,8 +18,6 @@ export const categoryModal = createSlice({
     initialState,
     reducers : {
         _setModal : (state, action) => {
-            console.log(action.payload);
-            
             state.modal = action.payload
         }
     }

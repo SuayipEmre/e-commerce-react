@@ -10,6 +10,7 @@ const Categories: React.FC = () => {
   const modal = useModal()
 
 
+  
 
  
 
@@ -39,7 +40,7 @@ const Categories: React.FC = () => {
 
 
       <div className='hidden md:block'>
-        <div className='grid  grid-cols-4 px-4  gap-4  w-1/2   mt-3 ms-52 '>
+        <div className='grid  grid-cols-4 px-4  gap-4  w-[80%]   mt-3 ms-42 '>
           {
             categories.map((item) => (
               <CategoryItem key={item} item={item} />

@@ -2,10 +2,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import categories from '../features/categories';
 import categoryModal from '../features/modal';
+import products from '../features/products';
 
 const store = configureStore({
   reducer: { 
     categories,
+    products,
     categoryModal
   },
 });

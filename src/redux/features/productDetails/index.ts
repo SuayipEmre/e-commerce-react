@@ -33,8 +33,6 @@ export const detailsOfProduct = createSlice({
     extraReducers : (builder) => {
       builder
       .addCase(_fetchProductDetails.fulfilled, (state, action) => {
-        console.log(action.payload);
-        
         state.product = action.payload
         state.productStatus = {
             isLoading : false,

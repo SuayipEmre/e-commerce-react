@@ -13,7 +13,7 @@ const Sorting: React.FC = () => {
             <span>price</span>
             <select 
             onChange={(e) => handleSortChange(e)}
-            className='border border-[#F27919] cursor-pointer outline-none rounded-sm'>
+            className=' cursor-pointer text-orange bg-black/80 py-1 outline-none rounded-sm text-center'>
                 <option disabled>Please select one</option>
                 <option value="inc">Increment</option>
                 <option value="dec">Decrement</option>

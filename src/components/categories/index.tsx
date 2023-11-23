@@ -5,7 +5,8 @@ import { IoCloseSharp } from "react-icons/io5";
 import { setModal } from '~/redux/features/modal/actions';
 import { useModal } from '~/redux/features/modal/hooks';
 import classNames from 'classnames';
-import Sorting from '../products/sorting';
+
+
 const Categories: React.FC = memo(() => {
   const categories = useCategories()
   const modal = useModal()
@@ -30,20 +31,18 @@ const Categories: React.FC = memo(() => {
                 <CategoryItem mobile={true} key={item} item={item} />
               ))
             }
-            <Sorting />
           </div>
         </div>
       </div>
 
 
-      <div className='hidden md:block'>
+      <div className='hidden  md:flex md:items-center md:justify-end '>
         <div className='grid  grid-cols-5 px-4 items-center  gap-4  w-[80%]   mt-3 ms-42 '>
           {
             categories.map((item) => (
               <CategoryItem key={item} item={item} />
             ))
           }
-          <Sorting />
 
         </div>
       </div>

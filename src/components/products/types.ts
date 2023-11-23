@@ -1,13 +1,13 @@
 export type productsType = {
-    category: string
-    description: string
-    image: string
+    id: number
     title: string
     price: number
-    id: number
+    description: string
+    category: string
+    image: string
     rating: {
-        count: number
         rate: number
+        count: number
     }
 }
 export type itemType = {

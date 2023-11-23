@@ -5,7 +5,7 @@ type propsType = {
 }
 const Info : React.FC<propsType> = ({title}) => {
   return (
-    <span className='hidden lg:block'>{title}</span>
+    <span className='hidden lg:block '>{title}</span>
   )
 }
 

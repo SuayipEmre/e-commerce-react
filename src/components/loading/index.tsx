@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Loading = () => {
+const Loading:React.FC = () => {
   return (
-    <div>Loading</div>
+    <div>
+      loading
+    </div>
   )
 }
 

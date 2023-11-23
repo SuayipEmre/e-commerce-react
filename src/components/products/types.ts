@@ -1,4 +1,4 @@
-type productsType = {
+export type productsType = {
     category: string
     description: string
     image: string

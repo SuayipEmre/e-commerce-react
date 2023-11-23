@@ -11,10 +11,6 @@ const Categories: React.FC = memo(() => {
   const modal = useModal()
 
 
-
-
-
-
   return (
     <div>
 

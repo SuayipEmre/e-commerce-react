@@ -4,6 +4,7 @@ import categories from '../features/categories';
 import categoryModal from '../features/modal';
 import products from '../features/products';
 import search  from '../features/searchProducts';
+import sorting from '../features/sorting';
 
 
 const store = configureStore({
@@ -12,6 +13,7 @@ const store = configureStore({
     categories,
     products,
     categoryModal,
+    sorting
   },
 });
 

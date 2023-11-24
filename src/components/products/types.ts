@@ -1,4 +1,4 @@
-export type productsType = {
+export type productItemType = {
     id: number
     title: string
     price: number
@@ -11,5 +11,5 @@ export type productsType = {
     }
 }
 export type itemType = {
-    productItem: productsType
+    productItem: productItemType
 }

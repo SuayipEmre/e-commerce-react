@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import Categories from '~/components/categories'
 import Products from '~/components/products'
 import { fetchCategories } from '~/redux/features/categories/actions'
+import { fetchFavoriteProducts } from '~/redux/features/favoriteProducts/actions'
+
 import { fetchProducts } from '~/redux/features/products/actions'
 
 
@@ -12,6 +14,8 @@ const Home: React.FC = () => {
     useEffect(() => {
         fetchCategories()
         fetchProducts()
+        fetchFavoriteProducts()
+
     }, [])
 
 

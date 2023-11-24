@@ -1,5 +1,5 @@
 import React from 'react'
-import {  useProductsStatus } from '~/redux/features/products/hooks'
+import {  useProducts, useProductsStatus } from '~/redux/features/products/hooks'
 import { filterProducts } from '~/helpers/filterProducts'
 import Error from '~/components/error'
 import Loading from '~/components/loading'
@@ -11,9 +11,10 @@ type propsState = {
     id : string | undefined
 }
 const RelatedProducts : React.FC<propsState> = ({id}) => {
+    const products = useProducts()
     const { isLoading, isError } = useProductsStatus()
-    const products = filterProducts()
-    const doNotShowSameProduct = products.filter(item => item.id !== Number(id))
+    const filteredProducts = filterProducts(products)
+    const doNotShowSameProduct = filteredProducts.filter(item => item.id !== Number(id))
 
     
 

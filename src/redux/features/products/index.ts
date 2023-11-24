@@ -26,10 +26,13 @@ export const _fetchProducts = createAsyncThunk<productsType>('products/fetchProd
     const { data } = await axios.get('https://fakestoreapi.com/products')
     return data
 })
+
 export const _fetchProductByCategory = createAsyncThunk<productsType, string>('products by category/fetchProducts', async (category) => {
     const { data } = await axios.get(`https://fakestoreapi.com/products/category/${category}`)
     return data
 })
+
+
 
 export const products = createSlice({
     name: 'products',

@@ -3,19 +3,21 @@ import { configureStore } from '@reduxjs/toolkit';
 import categories from '../features/categories';
 import categoryModal from '../features/modal';
 import products from '../features/products';
-import search  from '../features/searchProducts';
+import search from '../features/searchProducts';
 import sorting from '../features/sorting';
-import  detailsOfProduct  from '../features/productDetails';
+import detailsOfProduct from '../features/productDetails';
+import favoriteProducts from '../features/favoriteProducts';
 
 
 const store = configureStore({
-  reducer: { 
+  reducer: {
     search,
     categories,
     products,
     detailsOfProduct,
     categoryModal,
-    sorting
+    sorting,
+    favoriteProducts
   },
 });
 

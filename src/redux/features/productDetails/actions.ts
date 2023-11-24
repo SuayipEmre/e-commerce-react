@@ -1,4 +1,4 @@
 import store from "~/redux/app/store";
 import { _fetchProductDetails } from ".";
 
-export const fetchProductDetails = (id : number):object => store.dispatch(_fetchProductDetails(id))
+export const fetchProductDetails = async(id : number):Promise<object>  => await store.dispatch(_fetchProductDetails(id))

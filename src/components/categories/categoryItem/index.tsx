@@ -20,7 +20,7 @@ const CategoryItem: React.FC<propsType> = ({ item, mobile }) => {
   return (
     <div
       onClick={handleCategoryClick}
-      className={classNames('col-span-5 my-3   md:col-span-1 cursor-pointer', {
+      className={classNames('col-span-5 my-3 hover:text-orange   md:col-span-1 cursor-pointer', {
         'border-b': mobile
       })}>
       <p>{item}</p>

@@ -10,9 +10,11 @@ import { useProductDetailsStatus } from '~/redux/features/productDetails/hooks';
 const ProductDetails: React.FC = () => {
   const { id } = useParams()
   const { isLoading, isError } = useProductDetailsStatus()
+
   useEffect(() => {
     fetchProductDetails(Number(id))
   }, [id])
+
   return (
     <div className='mt-24 md:mt-6'>
       {

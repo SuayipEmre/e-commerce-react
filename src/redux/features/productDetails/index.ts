@@ -1,15 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { productsType } from "~/components/products/types";
+import {  productsType } from "~/common/productsType";
+import { stateType } from "./type";
 
 
-type stateType = {
-  product : productsType | {},
-  productStatus : {
-    isLoading : boolean,
-    isError : boolean
-  }
-}
+
 const initialState : stateType = {
     product : {},
     productStatus : {
@@ -32,6 +27,14 @@ export const detailsOfProduct = createSlice({
     reducers : {},
     extraReducers : (builder) => {
       builder
+
+      .addCase(_fetchProductDetails.pending, (state) => {
+        state.productStatus = {
+            isLoading :true ,
+            isError : false
+        }
+      })
+      
       .addCase(_fetchProductDetails.fulfilled, (state, action) => {
         state.product = action.payload
         state.productStatus = {
@@ -41,12 +44,7 @@ export const detailsOfProduct = createSlice({
         
       })
 
-      .addCase(_fetchProductDetails.pending, (state) => {
-        state.productStatus = {
-            isLoading :true ,
-            isError : false
-        }
-      })
+ 
 
       .addCase(_fetchProductDetails.rejected, (state) => {
         state.productStatus = {

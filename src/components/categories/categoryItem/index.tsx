@@ -3,13 +3,11 @@ import React from 'react'
 import { setModal } from '~/redux/features/modal/actions'
 import { fetchProductByCategory } from '~/redux/features/products/actions'
 import { setSearchValue } from '~/redux/features/searchProducts/actions'
+import { categoryItemPropsType } from './type'
 
-type propsType = {
-  item: string
-  mobile?: boolean
-}
 
-const CategoryItem: React.FC<propsType> = ({ item, mobile }) => {
+
+const CategoryItem: React.FC<categoryItemPropsType> = ({ item, mobile }) => {
 
   const handleCategoryClick = (): void => {
     fetchProductByCategory(item)

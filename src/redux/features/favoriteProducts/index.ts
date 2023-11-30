@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { productsType } from "../productType";
 import axios from "axios";
-import { productItemType } from "~/components/products/types";
+import { productItemType, productsType } from "~/common/productsType";
 
 
 type stateType = {
@@ -31,7 +30,6 @@ export const _fetchFavoriteProducts = createAsyncThunk<productsType>('favorites/
 //post
 export const _addToFavorites = createAsyncThunk<productItemType, productItemType>('favorites/addToFavorites', async (data) => {
     const res = await axios.post(`http://localhost:3000/favorites/`, data)
-    console.log(data);
     return res.data
 })
 
@@ -101,8 +99,6 @@ export const favoriteProducts = createSlice({
                     isLoading: false,
                     isError: true
                 }
-                console.log(action.error.message);
-                
             })
 
             //remove

@@ -1,10 +1,8 @@
 import React from 'react'
 import { useSearchValue } from '~/redux/features/searchProducts/hooks'
 
-type amountType = {
-    amount : number
-}
-const MatchesFound : React.FC<amountType> = ({amount}) => {
+
+const MatchesFound : React.FC<foundPropsType> = ({amount}) => {
     const searchValue = useSearchValue()
     return (
         <div className='text-center mt-3 mb-3  font-light text-green-600'>

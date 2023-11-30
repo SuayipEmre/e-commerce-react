@@ -1,14 +1,11 @@
 import classNames from 'classnames';
 import React from 'react'
 import { FaCamera } from "react-icons/fa";
+import { ratingPropsType } from './type';
 
 
-type propsType = {
-    rate: number
-    count: number
-    padding? : boolean
-}
-const Rating: React.FC<propsType> = ({ rate, count , padding}) => {
+
+const Rating: React.FC<ratingPropsType> = ({ rate, count , padding}) => {
 
     const rating = Math.round(rate);
     const star = [];

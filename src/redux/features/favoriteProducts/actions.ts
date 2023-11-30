@@ -1,6 +1,6 @@
 import store from "~/redux/app/store";
 import { _addToFavorites, _fetchFavoriteProducts, _removeFavoriteProduct, _setIsFavorite } from ".";
-import { productItemType } from "~/components/products/types";
+import { productItemType } from "~/common/productsType";
 
 
 export const fetchFavoriteProducts = async() : Promise<object> =>  await store.dispatch(_fetchFavoriteProducts())

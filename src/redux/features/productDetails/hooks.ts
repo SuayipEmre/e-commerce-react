@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { productsType } from "~/components/products/types";
+import { productsType } from "~/common/productsType";
 import  { RootState } from "~/redux/app/store";
 
 export const useProductDetails = ()  : productsType | {} =>  useSelector((state  :RootState) => state.detailsOfProduct.product)

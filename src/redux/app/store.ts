@@ -7,6 +7,7 @@ import search from '../features/searchProducts';
 import sorting from '../features/sorting';
 import detailsOfProduct from '../features/productDetails';
 import favoriteProducts from '../features/favoriteProducts';
+import cart from '../features/cart';
 
 
 const store = configureStore({
@@ -17,7 +18,8 @@ const store = configureStore({
     detailsOfProduct,
     categoryModal,
     sorting,
-    favoriteProducts
+    favoriteProducts,
+    cart 
   },
 });
 

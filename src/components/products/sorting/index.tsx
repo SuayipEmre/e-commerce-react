@@ -3,10 +3,8 @@ import { setSortValue } from '~/redux/features/sorting/actions'
 
 const Sorting: React.FC = () => {
 
-    const handleSortChange = (e : any) => {
-      setSortValue(e.target.value)
-      
-    }
+    const handleSortChange = (e :  React.ChangeEventHandler<HTMLInputElement> ) => setSortValue(e.target.value)    
+    
     
     return (
         <div className='col-span-5 md:col-span-1  flex items-center gap-2 mb-4 border-b my-3' >

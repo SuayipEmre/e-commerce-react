@@ -6,11 +6,10 @@ import Loading from '~/components/loading'
 import ProductCard from '~/components/productCard'
 import NoMatches from '~/components/search/noMatches'
 import MatchesFound from '~/components/search/matchesFound'
+import { relatedProductType } from './type'
 
-type propsState = {
-    id : string | undefined
-}
-const RelatedProducts : React.FC<propsState> = ({id}) => {
+
+const RelatedProducts : React.FC<relatedProductType> = ({id}) => {
     const products = useProducts()
     const { isLoading, isError } = useProductsStatus()
     const filteredProducts = filterProducts(products)

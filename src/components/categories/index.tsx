@@ -5,12 +5,13 @@ import { IoCloseSharp } from "react-icons/io5";
 import { setModal } from '~/redux/features/modal/actions';
 import { useModal } from '~/redux/features/modal/hooks';
 import classNames from 'classnames';
+import Sorting from '../products/sorting';
 
 
 const Categories: React.FC = memo(() => {
+  
   const categories = useCategories()
   const modal = useModal()
-
 
   return (
     <div>
@@ -32,6 +33,7 @@ const Categories: React.FC = memo(() => {
               ))
             }
           </div>
+          <Sorting />
         </div>
       </div>
 
@@ -45,6 +47,7 @@ const Categories: React.FC = memo(() => {
           }
 
         </div>
+        <Sorting />
       </div>
 
     </div>

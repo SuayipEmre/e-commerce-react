@@ -1,3 +1,4 @@
+
 export type productItemType = {
     id: number
     title: string
@@ -8,8 +9,13 @@ export type productItemType = {
     rating: {
         rate: number
         count: number
-    }
+    },
 }
-export type itemType = {
-    productItem: productItemType
+export type productsType = productItemType[]
+
+
+export type cartItemType = productItemType & {
+    quantity: number;
 }
+
+export type cartType = cartItemType[]

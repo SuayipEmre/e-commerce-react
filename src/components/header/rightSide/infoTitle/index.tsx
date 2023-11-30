@@ -1,9 +1,8 @@
 import React from 'react'
+import { infoPropsType } from './type'
 
-type propsType = {
-  title : string
-}
-const Info : React.FC<propsType> = ({title}) => {
+
+const Info : React.FC<infoPropsType> = ({title}) => {
   return (
     <span className='hidden lg:block '>{title}</span>
   )

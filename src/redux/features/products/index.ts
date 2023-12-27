@@ -3,7 +3,7 @@ import axios from "axios";
 import { productsType } from "~/common/productsType";
 
 
-type stateTypes = {
+type initialStateTypes = {
     products: productsType
     productsStatus: {
         isLoading: boolean,
@@ -14,7 +14,7 @@ type stateTypes = {
 
 
 
-const initialState: stateTypes = {
+const initialState: initialStateTypes = {
     products: [],
     productsStatus: {
         isLoading: false,

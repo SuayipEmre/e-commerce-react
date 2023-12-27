@@ -2,13 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 
-
-type modalType = {
-    modal : any
+type initialStateType = {
+    modal : boolean
 }
 
-
-const initialState : modalType  = {
+const initialState : initialStateType  = {
     modal : false
 }
 

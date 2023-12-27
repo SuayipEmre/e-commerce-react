@@ -1,5 +1,5 @@
 import { productItemType } from "~/common/productsType"
 
-export type favoritePropsType = {
+export type FavoritePropsType = {
     product: productItemType
 }

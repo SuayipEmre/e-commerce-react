@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import Error from '~/components/error'
+import Error from '~/components/errorAndLoading/error'
+import Loading from '~/components/errorAndLoading/loading'
 import FavoriteProductsComp from '~/components/favoriteProducts/favoriteProductsComp'
-import Loading from '~/components/loading'
 import { fetchFavoriteProducts } from '~/redux/features/favoriteProducts/actions'
 import { useFavoriteProductStatus } from '~/redux/features/favoriteProducts/hooks'
 

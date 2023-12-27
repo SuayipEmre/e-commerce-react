@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import CartComp from '~/components/cartComp'
-import Error from '~/components/error'
-import Loading from '~/components/loading'
+import Error from '~/components/errorAndLoading/error'
+import Loading from '~/components/errorAndLoading/loading'
 import { fetchProductFromCart, getCartTotal } from '~/redux/features/cart/actions'
 import { useCart, useCartStatus } from '~/redux/features/cart/hooks'
 

@@ -1,6 +1,6 @@
 import { productItemType } from "~/common/productsType"
 
-export type stateType = {
+export type initialStateTypes = {
     product: productItemType | {},
     productStatus: {
         isLoading: boolean,

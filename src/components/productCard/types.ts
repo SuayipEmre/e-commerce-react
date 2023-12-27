@@ -1,6 +1,6 @@
 import { cartItemType, productItemType } from "~/common/productsType"
 
-export type propsType = {
+export type ProductCardPropsType = {
     productItem: productItemType | cartItemType
     onFavoritePage?: boolean
     onCart?: boolean

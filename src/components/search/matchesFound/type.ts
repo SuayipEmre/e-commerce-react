@@ -1,3 +1,3 @@
-type foundPropsType = {
+export type MatchesFoundPropsType = {
     amount : number
 }

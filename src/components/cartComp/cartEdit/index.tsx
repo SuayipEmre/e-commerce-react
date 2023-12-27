@@ -2,14 +2,25 @@ import React, { useEffect, useState } from 'react'
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { FiTrash } from 'react-icons/fi';
 import { cartItemType } from '~/common/productsType'
-import { deleteFromCart, editCart, getCartTotal } from '~/redux/features/cart/actions';
-import { propsType } from '../../productCard/types';
+import { deleteFromCart, editCart } from '~/redux/features/cart/actions';
+import { CartEditPropsType } from '../../productCard/types';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
+const CartEdit: React.FC<CartEditPropsType> = ({ productItem }) => {
 
 
-
-const CartOperations: React.FC<propsType> = ({ productItem }) => {
+    const notify = () => toast.success(`${productItem.title} was removed from Shopping Cart.`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+    });
 
 
     const quantity = (productItem as cartItemType).quantity
@@ -17,7 +28,10 @@ const CartOperations: React.FC<propsType> = ({ productItem }) => {
     const [count, setCount] = useState(quantity)
 
 
-    const handleDeleteCLick = () => deleteFromCart(productItem.id)
+    const handleDeleteCLick = async () => {
+        await deleteFromCart(productItem.id)
+        notify()
+    }
 
     useEffect(() => {
         const updateCart = async () => {
@@ -26,7 +40,6 @@ const CartOperations: React.FC<propsType> = ({ productItem }) => {
                 quantity: count,
                 totalPrice: productItem.price * count
             })
-            
             window.location.reload()
 
         }
@@ -55,8 +68,10 @@ const CartOperations: React.FC<propsType> = ({ productItem }) => {
             <FaMinus className='cursor-pointer' onClick={() => modifyCount('dec')} />
 
             <FiTrash onClick={handleDeleteCLick} className='cursor-pointer' />
+
+            <ToastContainer />
         </div>
     )
 }
 
-export default CartOperations
+export default CartEdit

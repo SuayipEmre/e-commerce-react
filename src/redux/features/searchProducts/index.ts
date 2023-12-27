@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-type stateType = {
+type initialStateType = {
     searchValue : string
 }
 
 
-const initialState : stateType  = {
+const initialState : initialStateType  = {
     searchValue : ''
 }
 

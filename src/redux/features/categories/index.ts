@@ -9,14 +9,14 @@ export const _fetchCategories = createAsyncThunk<string[]>('categories/fetchCate
 })
 
 
-type categories = {
+type initialStateTypes = {
   categories: Array<string>
   categoriesStatus: {
     isLoading: boolean,
     isError: boolean
   }
 }
-const initialState: categories = {
+const initialState: initialStateTypes = {
   categories: [],
   categoriesStatus: {
     isLoading: false,

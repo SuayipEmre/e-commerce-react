@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import Rating from '~/components/productRating';
 import Favorite from '../favoriteProducts/favoriteOperations';
 import classNames from 'classnames';
-import CartOperations from '../cartComp/cartOperations';
-import { propsType } from './types';
+import { ProductCardPropsType } from './types';
+import CartEdit from '../cartComp/cartEdit';
 
 
 
-const ProductCard: React.FC<propsType> = ({ productItem, onFavoritePage, onCart }) => {
+const ProductCard: React.FC<ProductCardPropsType> = ({ productItem, onFavoritePage, onCart }) => {
   const navigate = useNavigate()
 
   const handleDetailClick = () => {
@@ -35,7 +35,7 @@ const ProductCard: React.FC<propsType> = ({ productItem, onFavoritePage, onCart 
       <Rating rate={productItem.rating.rate} count={productItem.rating.count} padding={true} />
 
       {
-        onCart && 'quantity' in productItem && <CartOperations productItem={productItem} />
+        onCart && 'quantity' in productItem && <CartEdit productItem={productItem} />
       }
 
 

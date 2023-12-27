@@ -3,7 +3,7 @@ import axios from "axios";
 import { productItemType, productsType } from "~/common/productsType";
 
 
-type stateType = {
+type initialStateTypes = {
     products: productsType,
     productStatus: {
         isLoading: boolean,
@@ -12,7 +12,7 @@ type stateType = {
     isFavorite: boolean
 }
 
-const initialState: stateType = {
+const initialState: initialStateTypes = {
     products: [],
     productStatus: {
         isLoading: false,
@@ -35,7 +35,7 @@ export const _addToFavorites = createAsyncThunk<productItemType, productItemType
 
 //delete
 export const _removeFavoriteProduct = createAsyncThunk<any, number>('favorites/removeFromFavorites', async (id) => {
-    const res = await axios.delete(`http://localhost:3000/favorites/${id}`)
+    await axios.delete(`http://localhost:3000/favorites/${id}`)
     return id
 })
 
@@ -94,7 +94,7 @@ export const favoriteProducts = createSlice({
                 }
             })
 
-            .addCase(_addToFavorites.rejected, (state, action) => {
+            .addCase(_addToFavorites.rejected, (state) => {
                 state.productStatus = {
                     isLoading: false,
                     isError: true

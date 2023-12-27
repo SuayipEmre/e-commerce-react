@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type sortingType = {
+type initialStateType = {
     sortValue : string
 }
-const initialState : sortingType = {
+const initialState : initialStateType = {
     sortValue : ''
 }
 export const sorting = createSlice({

@@ -3,7 +3,7 @@ import { setSortValue } from '~/redux/features/sorting/actions'
 
 const Sorting: React.FC = () => {
 
-    const handleSortChange = (e :  React.ChangeEventHandler<HTMLInputElement> ) => setSortValue(e.target.value)    
+    const handleSortChange = (e:React.ChangeEvent<HTMLSelectElement>) =>   setSortValue(e.target.value)
     
     
     return (

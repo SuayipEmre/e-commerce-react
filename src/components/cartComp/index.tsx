@@ -29,7 +29,7 @@ const CartComp: React.FC = () => {
                     ))
                 }
 
-                <p className='col-span-6 font-light text-[15px] text-orange text-end'>subTotal : {total}$</p>
+                <p className='col-span-6 font-light text-[15px] text-orange text-end'>subTotal : ${total}</p>
             </div>
 
         </div>

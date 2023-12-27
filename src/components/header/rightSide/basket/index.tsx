@@ -3,6 +3,7 @@ import { CiShoppingBasket } from "react-icons/ci";
 import Info from '../infoTitle';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '~/redux/features/cart/hooks';
+
 const Basket: React.FC = () => {
   const navigate = useNavigate()
   const cart = useCart()

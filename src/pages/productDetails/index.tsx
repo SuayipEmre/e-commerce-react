@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Error from '~/components/error';
-import Loading from '~/components/loading';
+import Error from '~/components/errorAndLoading/error';
+import Loading from '~/components/errorAndLoading/loading';
 import ProductDetailItem from '~/components/productDetail/item';
 import RelatedProducts from '~/components/productDetail/relatedProducts';
 import { fetchProductDetails } from '~/redux/features/productDetails/actions';

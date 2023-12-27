@@ -3,10 +3,10 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { addToFavorites, removeFavoriteProduct } from '~/redux/features/favoriteProducts/actions';
 import { useFavoriteProducts } from '~/redux/features/favoriteProducts/hooks';
 import { IoHeartSharp } from "react-icons/io5";
-import { favoritePropsType } from './type';
+import { FavoritePropsType } from './type';
 
 
-const Favorite: React.FC<favoritePropsType> = ({ product }) => {
+const Favorite: React.FC<FavoritePropsType> = ({ product }) => {
     const favoriteProducts = useFavoriteProducts()
     const [isFavorite, setIsFavorite] = useState<boolean>(false)
 

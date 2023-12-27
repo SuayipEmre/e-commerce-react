@@ -1,8 +1,9 @@
 import React from 'react'
 import { useSearchValue } from '~/redux/features/searchProducts/hooks'
+import { MatchesFoundPropsType } from './type'
 
 
-const MatchesFound : React.FC<foundPropsType> = ({amount}) => {
+const MatchesFound : React.FC<MatchesFoundPropsType> = ({amount}) => {
     const searchValue = useSearchValue()
     return (
         <div className='text-center mt-3 mb-3  font-light text-green-600'>

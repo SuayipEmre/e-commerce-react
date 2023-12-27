@@ -1,18 +1,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { cartItemType, cartType, productsType } from "~/common/productsType";
+import { editCartParameterTypes } from "./type";
 
-type state = {
-    carts: cartType,
-    totalPrice: number,
+type initialStateTypes = {
+    carts: cartType ,
+    totalPrice: string,
     cartStatus: {
         isLoading: boolean,
         isError: boolean
     }
 }
-const initialState: state = {
+const initialState: initialStateTypes = {
     carts: [],
-    totalPrice: 0,
+    totalPrice: '',
     cartStatus: {
         isLoading: false,
         isError: false
@@ -36,15 +37,9 @@ export const _deleteFromCart = createAsyncThunk<unknown, number>('cart/deleteFro
 
 
 
-type editType = {
-    id: number,
-    quantity: number,
-}
-
-type editPropsType = editType & {}
 
 
-export const _editCart = createAsyncThunk<unknown, editPropsType>('cart/editCart', async ({ id, quantity}) => {
+export const _editCart = createAsyncThunk<unknown, editCartParameterTypes>('cart/editCart', async ({ id, quantity}) => {
     const { data } = await axios.patch(`http://localhost:3000/cart/${id}`, { quantity })
     return data
 })
@@ -114,7 +109,6 @@ export const cart = createSlice({
 
 
 
-            //DELETE PRODUCT FROM CART
 
             .addCase(_deleteFromCart.pending, (state) => {
                 state.cartStatus = {
@@ -141,8 +135,7 @@ export const cart = createSlice({
 
 
             //EDIT
-
-            .addCase(_editCart.fulfilled, (state, action) => {
+            .addCase(_editCart.fulfilled, (state) => {
                 state.cartStatus = {
                     isLoading: false,
                     isError: false

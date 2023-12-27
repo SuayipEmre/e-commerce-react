@@ -18,9 +18,9 @@ const FavoriteProductsComp: React.FC = () => {
 
       <div className=" flex items-center justify-center ">
         {
-          searchValue ? (
+          searchValue && (
             filteredProducts.length == 0 ?   <NoMatches /> : <MatchesFound amount={filteredProducts.length} /> 
-          ) : <></>
+          )
         }
       </div>
       <div className="grid grid-cols-12 gap-7">
